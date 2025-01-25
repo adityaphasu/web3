@@ -45,7 +45,7 @@ const Board = () => {
           <span className="w-full absolute bg-[#00bbfc] h-0.5 left-0 bottom-0"></span>
         </a>
       </div>
-      <div className="my-5 flex gap-4">
+      <div className="my-5 flex flex-col gap-4 p-5 rounded-lg justify-center md:flex-row backdrop-blur bg-white/5">
         <EcosystemDropdown
           ecosystems={ecosystems}
           defaultSelectedValues={ecosystems.map((e) => e.value)}
