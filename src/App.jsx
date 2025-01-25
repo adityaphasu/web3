@@ -4,7 +4,7 @@ function App() {
   return (
     <main className="flex flex-col items-center justify-center py-20">
       <div className="flex flex-col items-center space-y-4">
-        <h1 className="text-4xl font-medium">CL Web3 Grants Database</h1>
+        <h1 className="text-4xl font-medium text-center">CL Web3 Grants Database</h1>
         <p className="text-[#ffffff7a] max-w-[45rem] text-center">
           Empowering Web3 projects with a dynamic grant database of over 80 opportunities.
           <br />

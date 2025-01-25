@@ -9,13 +9,13 @@ const GrantCard = ({ grant }) => {
 
   return (
     <div className="rounded p-5 bg-[#151226]/10 text-white backdrop-blur-[3px] border border-purple-500/20">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="flex flex-col gap-4 md:max-w-[45rem]">
+      <div className="flex flex-col md:flex-row justify-between gap-4">
+        <div className="flex flex-col gap-2.5 md:max-w-[45rem]">
           <div className="flex items-center gap-3">
             <h3 className="text-lg font-semibold">{grant.grantProgramName}</h3>
             <Badge className="bg-[#00bbfc] hover:bg-[#00bbfc]">{grant.status}</Badge>
           </div>
-          <div className="flex text-gray-400 gap-4 text-[0.95rem]">
+          <div className="flex text-gray-400 gap-2.5 text-[0.95rem]">
             <span>{grant.ecosystem}</span>
             <Separator orientation="vertical" className="bg-gray-400" />
             <span>{grant.totalFundingAvailable}</span>

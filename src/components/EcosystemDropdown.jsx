@@ -42,12 +42,12 @@ export function EcosystemDropdown({ defaultSelectedValues, onChange, ecosystems 
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="min-w-[300px] justify-between bg-[#151226]/70 text-white hover:bg-[#151226] hover:text-white border-[#151226]">
+          className="min-w-[250px] justify-between bg-[#151226]/70 text-white hover:bg-[#151226] hover:text-white border-[#151226]">
           <span>Ecosystem</span>
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="max-w-[300px] p-0 bg-[#151226]">
+      <PopoverContent className="max-w-[250px] p-0 bg-[#151226]">
         <Command className="bg-[#151226] text-white">
           <CommandInput placeholder="Search" />
           <CommandList>
