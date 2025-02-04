@@ -12,27 +12,22 @@ import {
 } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { ScrollArea } from "./ui/scroll-area";
+import { ecosystems } from "@/data/filterOptions";
 
-export function EcosystemDropdown({ defaultSelectedValues, onChange, ecosystems }) {
+export function EcosystemDropdown({ onChange }) {
   const [open, setOpen] = useState(false);
-  const [selectedValues, setSelectedValues] = useState(defaultSelectedValues);
+  const [selectedValues, setSelectedValues] = useState([]);
 
   useEffect(() => {
     onChange(selectedValues);
   }, [selectedValues, onChange]);
 
   const handleSelect = (currentValue) => {
-    if (currentValue === "all") {
-      setSelectedValues(
-        selectedValues.length === ecosystems.length ? [] : ecosystems.map((b) => b.value)
-      );
-    } else {
-      setSelectedValues((current) =>
-        current.includes(currentValue)
-          ? current.filter((value) => value !== currentValue)
-          : [...current, currentValue]
-      );
-    }
+    setSelectedValues((current) =>
+      current.includes(currentValue)
+        ? current.filter((value) => value !== currentValue)
+        : [...current, currentValue]
+    );
   };
 
   return (
@@ -42,27 +37,18 @@ export function EcosystemDropdown({ defaultSelectedValues, onChange, ecosystems 
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="min-w-[250px] justify-between bg-[#151226]/70 text-white hover:bg-[#151226] hover:text-white border-[#151226]">
+          className="justify-between bg-[#151226]/70 text-white hover:bg-[#151226] hover:text-white border-[#151226]">
           <span>Ecosystem</span>
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="max-w-[250px] p-0 bg-[#151226]">
+      <PopoverContent className="p-0 bg-[#151226]">
         <Command className="bg-[#151226] text-white">
           <CommandInput placeholder="Search" />
           <CommandList>
             <CommandEmpty>No Ecosystem found.</CommandEmpty>
             <ScrollArea className="h-[200px]">
               <CommandGroup className="text-white border-none">
-                <CommandItem onSelect={() => handleSelect("all")} className="cursor-pointer mr-2">
-                  <Check
-                    className={cn(
-                      "mr-2 h-4 w-4",
-                      selectedValues.length === ecosystems.length ? "opacity-100" : "opacity-0"
-                    )}
-                  />
-                  Select All
-                </CommandItem>
                 {ecosystems.map((ecosystem) => (
                   <CommandItem
                     key={ecosystem.value}
