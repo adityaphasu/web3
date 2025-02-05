@@ -17,7 +17,7 @@ const Header = () => {
             href="https://docs.google.com/forms/d/e/1FAIpQLSewB2GaJXyWY5m1de5zw-vnP4KotEtHu6sujaDWP9tWaoAquw/viewform?usp=sharing"
             target="_blank"
             rel="noreferrer"
-            className="text-white px-2 md:px-4 py-1.5 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors font-semibold">
+            className="text-white px-2 md:px-4 py-2 rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors font-semibold">
             Add Grant
           </a>
         </div>
